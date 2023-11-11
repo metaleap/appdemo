@@ -7,7 +7,7 @@ import (
 
 func init() {
 	Apis(ApiMethods{
-		"helloName": apiHelloName.Checks(
+		"_/helloName": apiHelloName.Checks(
 			Fails{Err: "ExpectedName", If: HelloNameName.Equal("")},
 		),
 	})

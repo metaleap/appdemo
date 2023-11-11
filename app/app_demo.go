@@ -4,13 +4,14 @@ import (
 	"yo"
 
 	. "yo/srv"
+	. "yo/util"
+	"yo/util/str"
 )
 
 func init() {
 	yo.AppPkgPath = appdemoPkg.PkgPath()
-	AppApiUrlPrefix = "_/"
-	AppSideStaticRePathFor = func(requestPath string) string {
-		return "__static/appdemo.html"
+	AppSideStaticRePathFor = func(reqUrlPath string) string {
+		return If(str.Begins(reqUrlPath, "_/"), "", "__static/appdemo.html")
 	}
 }
 
