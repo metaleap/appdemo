@@ -160,17 +160,17 @@ reqMaxReqPayloadSizeMb = 1
 
 reqMaxReqMultipartSizeMb = 22
 
-const errsHelloName = ['HelloName_ExpectedName', 'MissingOrExcessiveContentLength', 'TimedOut'] as const
-export async function apiHelloName(payload?: helloName_In, formData?: FormData, query?: {[_:string]:string}): Promise<Return_string_> {
+const errs__helloName = ['MissingOrExcessiveContentLength', 'TimedOut', '__helloName_ExpectedName'] as const
+export async function api__helloName(payload?: __helloName_In, formData?: FormData, query?: {[_:string]:string}): Promise<Return_string_> {
 	try {
-		return await req<helloName_In, Return_string_, HelloNameErr>('_/helloName', payload, formData, query)
+		return await req<__helloName_In, Return_string_, __helloNameErr>('_/helloName', payload, formData, query)
 	} catch(err: any) {
-		if (err && err['body_text'] && (errsHelloName.indexOf(err.body_text) >= 0))
-			throw(new Err<HelloNameErr>(err.body_text as HelloNameErr))
+		if (err && err['body_text'] && (errs__helloName.indexOf(err.body_text) >= 0))
+			throw(new Err<__helloNameErr>(err.body_text as __helloNameErr))
 		throw(err)
 	}
 }
-export type HelloNameErr = typeof errsHelloName[number]
+export type __helloNameErr = typeof errs__helloName[number]
 
 export type ErrEntryField = 'Id' | 'DtMade' | 'DtMod' | 'Err' | 'StackTrace' | 'CtxVals' | 'HttpUrlPath' | 'HttpFullUri' | 'NumCaught' | 'JobRunId' | 'JobTaskId' | 'DbTx'
 
@@ -186,7 +186,7 @@ export type JobTaskField = 'Id' | 'DtMade' | 'DtMod' | 'Version' | 'JobTypeId' |
 
 export type MailReqField = 'Id' | 'DtMade' | 'DtMod' | 'TmplId' | 'TmplArgs' | 'MailTo'
 
-export type helloName_In = {
+export type __helloName_In = {
 	Name?: string
 }
 

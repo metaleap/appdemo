@@ -7,7 +7,7 @@ export function main() {
     const btn_on_click = async () => {
         let name = prompt("Your name?")
         if (name && (name = name.trim())) try {
-            const greeting = await yo.apiHelloName({ Name: name })
+            const greeting = await yo.api__helloName({ Name: name })
             alert(greeting.Result)
         } catch (err) {
             alert(err)

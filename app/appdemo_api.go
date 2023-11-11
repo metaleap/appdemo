@@ -8,7 +8,7 @@ import (
 func init() {
 	Apis(ApiMethods{
 		"_/helloName": apiHelloName.Checks(
-			Fails{Err: "ExpectedName", If: HelloNameName.Equal("")},
+			Fails{Err: "ExpectedName", If: __helloNameName.Equal("")},
 		),
 	})
 }

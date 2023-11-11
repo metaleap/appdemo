@@ -18,5 +18,5 @@ func api[TIn any, TOut any](f func(*yosrv.ApiCtx[TIn, TOut]), failIfs ...yosrv.F
 	return yosrv.Api[TIn, TOut](f, failIfs...).From(appdemoPkg)
 }
 
-const ErrHelloName_ExpectedName util.Err = "HelloName_ExpectedName"
-const HelloNameName = q.F("Name")
+const Err__helloName_ExpectedName util.Err = "__helloName_ExpectedName"
+const __helloNameName = q.F("Name")
