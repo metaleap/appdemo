@@ -8,7 +8,7 @@ import (
 
 func main() {
 	appdemo.Init() // keep in `main()`, dont move to `init()`
-	doListenAndServe := yo.Init(staticFsYo, staticFsApp)
+	doListenAndServe := yo.Init(staticFs_Yo, staticFs_App)
 	appdemo.OnBeforeListenAndServe()
 	doListenAndServe()
 }
